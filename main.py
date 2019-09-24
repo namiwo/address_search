@@ -3,11 +3,10 @@ import requests
 
 def main():
     # 入力
-    # 1600024 ⇒ 東京都新宿区西新宿
-    zipcode = "1600023"
+    zipcode = input("郵便番号を入力してください > ")
     url = f"http://zipcloud.ibsnet.co.jp/api/search?zipcode={zipcode}"
+
     # 計算
-    # リクエストを送る⇒受け取ってパース（解析）⇒フォーマット（仮）
     response = requests.get(url)
 
     address = response.json()["results"][0]
